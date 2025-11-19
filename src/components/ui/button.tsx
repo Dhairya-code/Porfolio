@@ -4,7 +4,7 @@ import { forwardRef } from 'react';
 import { cn } from '@/lib/utils';
 
 type ButtonVariant = 'default' | 'outline' | 'ghost';
-type ButtonSize = 'default' | 'lg' | 'icon';
+type ButtonSize = 'default' | 'sm' | 'lg' | 'icon';
 
 const variantClasses: Record<ButtonVariant, string> = {
   default:
@@ -16,6 +16,7 @@ const variantClasses: Record<ButtonVariant, string> = {
 
 const sizeClasses: Record<ButtonSize, string> = {
   default: 'px-4 py-2 rounded-lg text-sm font-medium',
+  sm: 'px-3 py-1.5 rounded-md text-sm font-medium',
   lg: 'px-8 py-3 rounded-full text-base font-semibold',
   icon: 'h-10 w-10 rounded-full flex items-center justify-center',
 };
