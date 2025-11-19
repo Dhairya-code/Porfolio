@@ -33,13 +33,17 @@ export function Contact(): JSX.Element {
     setIsSubmitting(true);
     setSubmitStatus('');
     try {
-      const res = await fetch('/api/contact', {
+      // NOTE: Replace the URL below with your deployed Google Apps Script Web App URL.
+      // Deploy your Apps Script as a Web App and copy the provided URL (example: https://script.google.com/macros/s/AKfycb.../exec)
+      const WEB_APP_URL = 'https://script.google.com/macros/s/REPLACE_WITH_YOUR_SCRIPT_ID/exec';
+
+      const res = await fetch(WEB_APP_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
 
-      const data = await res.json();
+      const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data?.error || 'Failed to send message');
 
       setSubmitStatus('success');
