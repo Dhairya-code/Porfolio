@@ -1,0 +1,26 @@
+{
+  "miniapp": {
+    "version": "1",
+    "name": "Dhairya's Tech Portfolio",
+    "iconUrl": "https://usdozf7pplhxfvrl.public.blob.vercel-storage.com/thumbnail_b0e50131-6d56-4f90-9585-f3636f90d24f-1gpnCoVtzdMVYBfbyYUZDwlaAtRw0T",
+    "homeUrl": "https://salt-duck-930.app.ohara.ai",
+    "imageUrl": "https://usdozf7pplhxfvrl.public.blob.vercel-storage.com/thumbnail_b0e50131-6d56-4f90-9585-f3636f90d24f-1gpnCoVtzdMVYBfbyYUZDwlaAtRw0T",
+    "buttonTitle": "Open with Ohara",
+    "splashImageUrl": "https://usdozf7pplhxfvrl.public.blob.vercel-storage.com/farcaster/splash_images/splash_image1.svg",
+    "splashBackgroundColor": "#ffffff",
+    "tags": [
+      "ohara",
+      "mini-app",
+      "base",
+      "farcaster"
+    ],
+    "primaryCategory": "entertainment",
+    "ogTitle": "Dhairya's Tech Portfolio",
+    "ogImageUrl": "https://usdozf7pplhxfvrl.public.blob.vercel-storage.com/thumbnail_b0e50131-6d56-4f90-9585-f3636f90d24f-1gpnCoVtzdMVYBfbyYUZDwlaAtRw0T"
+  },
+  "baseBuilder": {
+    "allowedAddresses": [
+      ""
+    ]
+  }
+}
