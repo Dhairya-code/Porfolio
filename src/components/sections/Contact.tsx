@@ -32,17 +32,27 @@ export function Contact(): JSX.Element {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+      const data = await res.json();
+      if (!res.ok) throw new Error(data?.error || 'Failed to send message');
+
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
-      
-      setTimeout(() => {
-        setSubmitStatus('');
-      }, 3000);
-    }, 1500);
+      setIsSubmitting(false);
+
+      setTimeout(() => setSubmitStatus(''), 4000);
+    } catch (err: any) {
+      console.error('Contact form error:', err);
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitStatus(''), 4000);
+    }
   };
 
   const socialLinks = [
