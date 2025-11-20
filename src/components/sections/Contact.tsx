@@ -36,11 +36,15 @@ export function Contact(): JSX.Element {
       // NOTE: Replace the URL below with your deployed Google Apps Script Web App URL.
       // Deploy your Apps Script as a Web App and copy the provided URL (example: https://script.google.com/macros/s/AKfycb.../exec)
       const WEB_APP_URL = 'https://script.google.com/macros/s/REPLACE_WITH_YOUR_SCRIPT_ID/exec';
+      // Token generated and also set in the Apps Script EXPECTED_TOKEN
+      const TOKEN = 'd9f3a7c2b6e14f1aa5c8e3f47b2d9a1c';
+
+      const payload = { ...formData, token: TOKEN };
 
       const res = await fetch(WEB_APP_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       const data = await res.json().catch(() => ({}));
